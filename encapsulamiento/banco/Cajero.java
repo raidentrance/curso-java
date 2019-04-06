@@ -3,6 +3,7 @@ class CuentaDeBanco {
 	public double retirarDinero(int cuenta, double monto) {
 		validarCuenta(cuenta);
 		double saldoActual = consultarSaldoActual(cuenta);
+		System.out.println("El saldo actual es de: "+saldoActual);
 		if (compararSaldoContraRetiro(monto, saldoActual)) {
 			saldoActual = saldoActual - monto;
 			entregarDinero(monto);
@@ -28,9 +29,7 @@ class CuentaDeBanco {
 	}
 
 	public void validarCuenta(int cuenta) {
-		if (cuenta == 9999) {
-			return;
-		} else {
+		if (cuenta != 9999) {
 			System.err.println("Cuenta inválida");
 			System.exit(0);
 		}
@@ -46,9 +45,7 @@ class CuentaDeBanco {
 public class Cajero {
 	public static void main(String[] args) {
 		CuentaDeBanco cuenta = new CuentaDeBanco();
-		double saldoActual = cuenta.consultarSaldoActual(9999);
-		System.out.println("Saldo actual : " + saldoActual);
-		double retirarDinero = cuenta.retirarDinero(9999, 10);
-		System.out.println("Nuevo saldo " + retirarDinero);
+		double nuevoSaldo = cuenta.retirarDinero(9999, 10);
+		System.out.println("Nuevo saldo: " + nuevoSaldo);
 	}
 }
