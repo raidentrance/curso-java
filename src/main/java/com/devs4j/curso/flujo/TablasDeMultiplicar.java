@@ -1,3 +1,4 @@
+package com.devs4j.curso.flujo;
 
 public class TablasDeMultiplicar {
 	public static void main(String args[]) {

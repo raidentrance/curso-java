@@ -1,3 +1,5 @@
+package com.devs4j.curso.classes;
+
 class TestPersona{
 
 	/**

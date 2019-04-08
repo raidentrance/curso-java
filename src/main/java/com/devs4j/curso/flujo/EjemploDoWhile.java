@@ -1,3 +1,5 @@
+package com.devs4j.curso.flujo;
+
 import java.util.Random;
 
 public class EjemploDoWhile {
