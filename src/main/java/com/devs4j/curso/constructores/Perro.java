@@ -3,14 +3,35 @@ package com.devs4j.curso.constructores;
 public class Perro {
 	private String nombre;
 	private String raza;
+	private long lastUpdateTimestamp;
 
 	public Perro() {
-		super();
+		this("Solovino", "Electrico");
+		System.out.println("Creando un perrillo por defecto");
 	}
 
-	public Perro(String nombre, String raza) {
-		this.nombre = nombre;
-		this.raza = raza;
+	public Perro(String n, String r) {
+		this(n);
+		System.out.println("Creando un perrillo con nombre y raza");
+		lastUpdateTimestamp = System.currentTimeMillis();
+		raza = r;
+	}
+
+	public Perro(String n) {
+		nombre = n;
+		lastUpdateTimestamp = System.currentTimeMillis();
+	}
+
+	{
+		System.out.println("Bloque anonimo 1");
+		lastUpdateTimestamp = System.currentTimeMillis();
+	}
+	{
+		System.out.println("Bloque anonimo 2");
+	}
+
+	public long getLastUpdateTimestamp() {
+		return lastUpdateTimestamp;
 	}
 
 	public String getNombre() {
