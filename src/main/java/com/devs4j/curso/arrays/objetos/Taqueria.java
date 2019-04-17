@@ -9,6 +9,12 @@ package com.devs4j.curso.arrays.objetos;
  */
 public class Taqueria {
 	public static void main(String[] args) {
+		SaborDeTaco[] sabores = SaborDeTaco.values();
+		for (SaborDeTaco sabor : sabores) {
+			System.out.println(sabor);
+		}
+		
+		
 		Taco orden1[] = new Taco[3];
 		orden1[0] = new Taco(SaborDeTaco.PASTOR, true, true);
 		orden1[1] = new Taco(SaborDeTaco.BISTEC, false, true);
@@ -16,7 +22,7 @@ public class Taqueria {
 
 		float precioTotal = 0.0f;
 		for (Taco taco : orden1) {
-			precioTotal += taco.getSaborDeTaco().getPrecio();
+			precioTotal =precioTotal+ taco.getSaborDeTaco().getPrecio();
 		}
 		System.out.println("El precio de la orden es de : " + precioTotal);
 	}

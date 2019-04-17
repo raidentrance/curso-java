@@ -8,15 +8,28 @@ package com.devs4j.curso.enumeraciones;
  *
  */
 public enum TamanioDePalomitas {
-	CHICA(20.5f), MEDIANA(30.1f), GRANDE(50.0f);
+	CHICA(20.5f, "Carton"), MEDIANA(30.1f, "Carton"), GRANDE(50.0f, "Plastico"), SUPERGRANDE;
 
 	private float precio;
 
-	private TamanioDePalomitas(float precio) {
+	private String material;
+
+	private TamanioDePalomitas(float precio, String material) {
 		this.precio = precio;
+		this.material = material;
+	}
+	private TamanioDePalomitas() {
+		System.out.println("Constructor por defecto");
 	}
 
 	public float getPrecio() {
 		return precio;
 	}
+
+	public String getMaterial() {
+		return material;
+	}
+	
+	
+
 }
